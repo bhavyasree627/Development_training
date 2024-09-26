@@ -1,0 +1,23 @@
+.heading {
+    font-style: italic;
+    padding-right: 5vw;
+    text-decoration: none;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#image {
+    height: 25%;
+    width: 25%;
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    flex-direction:row;
+}

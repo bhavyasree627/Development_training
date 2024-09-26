@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML FORMS</title>
+</head>
+
+<body>
+    <h1>Welcome! Please fill the below form</h1>
+    <form id="myForm" onSubmit="validateForm(event)">
+
+        <label for="name">Name</label>
+        <br>
+        <input type="text" placeholder="Enter your name" name="name" id="name"><br>
+
+        <label for="age">Age</label><br>
+        <input type="number" placeholder="Enter your age" name="age" id="age"><br>
+
+        <label for="email">Email</label>
+        <br>
+        <input type="email" placeholder="Enter your email" name="email" id="email"><br>
+
+        <label for="message">Message</label>
+        <br>
+        <input type="text" placeholder="Leave a message" name="message" id="message"><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <div id="msg"></div>
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault();  // Prevent form submission and page reload
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+            const age = document.getElementById("age").value;
+            const msg = document.getElementById("msg");
+
+            // Validation checks
+            if (name === "") {
+                alert("Name cannot be empty");
+                return false;
+            }
+
+            if (email === "") {
+                alert("Email cannot be empty");
+                return false;
+            }
+
+            if (age < 15 || age > 25) {
+                alert("Not a valid age to fill the form");
+                return false;
+            }
+
+            // Display success message
+            msg.innerHTML = "<h3>Form submitted successfully</h3>";
+            return true;
+        }
+    </script>
+
+</body>
+
+</html>

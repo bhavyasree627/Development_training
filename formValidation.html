@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact page</title>
+</head>
+<body>
+    <h1>Contact Me! </h1>
+    <form onSubmit="formValidation(event)">
+        <label for="name">Name</label><br>
+        <input type="text" id="name" name="name">
+        <br><br>
+        <label for="age">Age</label><br>
+        <input type="number" id="age" name="age" >
+        <br><br>
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email" >
+        <br><br>
+        <label for="message">Message</label><br>
+        <input type="text" id="message" name="message" >
+        <br><br>
+        <input type="submit" id="Submit" value="Submit">
+    </form>
+    <div id="msg"></div>
+    <script>
+        function formValidation(event){
+            event.preventDefault();
+        const name = document.getElementById("name").value;
+        const age = document.getElementById("age").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+        const msg = document.getElementById("msg")
+
+        if(name === ""){
+            alert("Name should not be empty");
+            return false;
+        }
+        if (email === "") {
+                alert("Email should not be empty");
+                return false;
+        }
+        if (message === "") {
+                alert("Better leave some message for me");
+                return false;
+            }
+        if (age<=18){
+            alert("Not a valid age");
+            return false;
+        }
+        msg.innerHTML= "<h1> Successfully sent a contact request. Soon will contact you. </h1>";
+        return true;
+    }
+
+        </script>
+</body>
+</html>
